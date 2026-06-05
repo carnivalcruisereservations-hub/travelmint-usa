@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 right-6 z-40">
       <motion.a
-        href="https://wa.me/14344398478"
+        href="https://wa.me/18883161789"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ opacity: 0, scale: 0.8 }}

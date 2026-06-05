@@ -97,10 +97,10 @@ export default function Footer() {
                   General Desk
                 </span>
                 <a
-                  href="tel:+14344398478"
+                  href="tel:+18883161789"
                   className="text-white hover:text-brand-gold transition-colors font-semibold tracking-wide"
                 >
-                  +1 (434) 439-8478
+                  (888) 316-1789
                 </a>
               </div>
               <p>concierge@TravelMintUSA.com</p>

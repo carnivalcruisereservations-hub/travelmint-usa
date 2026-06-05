@@ -66,11 +66,11 @@ export default function Navbar() {
           {/* Contact & CTA */}
           <div className="hidden lg:flex items-center gap-6">
             <a
-              href="tel:+14344398478"
+              href="tel:+18883161789"
               className="flex items-center gap-2 text-sm font-medium text-brand-accent hover:text-white transition-colors duration-300"
             >
               <Phone className="w-4 h-4 text-brand-gold" />
-              <span className="tracking-wide">+1 (434) 439-8478</span>
+              <span className="tracking-wide">(888) 316-1789</span>
             </a>
             <a
               href="#contact"
@@ -83,7 +83,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center gap-4">
             <a
-              href="tel:+14344398478"
+              href="tel:+18883161789"
               className="p-2.5 rounded-full glass-light text-brand-accent hover:text-white transition-colors"
             >
               <Phone className="w-4 h-4" />
@@ -127,11 +127,11 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-6 border-t border-white/10 pt-8">
               <a
-                href="tel:+14344398478"
+                href="tel:+18883161789"
                 className="flex items-center gap-3 text-lg text-brand-accent font-medium"
               >
                 <Phone className="w-5 h-5 text-brand-gold" />
-                <span>+1 (434) 439-8478</span>
+                <span>(888) 316-1789</span>
               </a>
               <a
                 href="#contact"

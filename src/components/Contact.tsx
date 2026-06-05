@@ -85,7 +85,7 @@ export default function Contact() {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="Enter your phone number (e.g. +1 (434) 439-8478)"
+                  placeholder="Enter your phone number (e.g. (888) 316-1789)"
                   className="w-full bg-brand-bg/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold text-sm font-sans"
                 />
               </div>
@@ -144,10 +144,10 @@ export default function Contact() {
                     Call Direct
                   </span>
                   <a
-                    href="tel:+14344398478"
+                    href="tel:+18883161789"
                     className="text-white hover:text-brand-accent font-semibold transition-colors duration-300 tracking-wide text-sm font-sans"
                   >
-                    +1 (434) 439-8478
+                    (888) 316-1789
                   </a>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export default function Contact() {
 
               {/* Chat on WhatsApp */}
               <a
-                href="https://wa.me/14344398478"
+                href="https://wa.me/18883161789"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full mt-2 py-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 font-semibold text-xs tracking-wider uppercase hover:bg-emerald-500 hover:text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-500 flex items-center justify-center gap-2"
