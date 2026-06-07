@@ -150,6 +150,8 @@ export default function Hero() {
                       <option value="Switzerland">Swiss Alps, Switzerland</option>
                       <option value="Paris">Paris, France</option>
                       <option value="Santorini">Santorini, Greece</option>
+                      <option value="United States">United States</option>
+                      <option value="Canada">Canada</option>
                     </select>
                   </div>
                 </div>
