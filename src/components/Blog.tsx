@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import Link from "next/link";
 
 const blogPosts = [
   {
@@ -11,6 +12,7 @@ const blogPosts = [
     category: "Luxury Travel Trends",
     date: "May 18, 2026",
     readTime: "5 min read",
+    href: "/blog/art-of-slow-travel",
   },
   {
     title: "Swiss Chalets: Top 5 Winter Hideaways For Private Helicopter Access",
@@ -19,6 +21,7 @@ const blogPosts = [
     category: "Alpine Escapes",
     date: "April 29, 2026",
     readTime: "7 min read",
+    href: "/blog/swiss-chalets",
   },
   {
     title: "Sailing Santorini: An Insider Guide to the Caldera Coves",
@@ -27,6 +30,7 @@ const blogPosts = [
     category: "Yachting Guides",
     date: "April 12, 2026",
     readTime: "4 min read",
+    href: "/blog/sailing-santorini",
   },
 ];
 
@@ -103,13 +107,13 @@ export default function Blog() {
               </div>
 
               {/* Read More link */}
-              <a
-                href="#contact"
+              <Link
+                href={post.href}
                 className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-accent hover:text-white transition-colors duration-300 group/link"
               >
                 Read Article
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
-              </a>
+              </Link>
             </motion.article>
           ))}
         </div>
