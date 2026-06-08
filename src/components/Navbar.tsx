@@ -38,7 +38,7 @@ export default function Navbar() {
             : "bg-transparent py-6 border-b border-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between gap-8 lg:gap-12">
           {/* Logo */}
           <a href="#" className="flex flex-col">
             <span className="text-xl md:text-2xl font-serif tracking-[0.2em] font-bold text-white hover:text-brand-accent transition-colors duration-300">
@@ -71,12 +71,6 @@ export default function Navbar() {
             >
               <Phone className="w-4 h-4 text-brand-gold" />
               <span className="tracking-wide">(888) 316-1789</span>
-            </a>
-            <a
-              href="#contact"
-              className="px-5 py-2.5 rounded-full border border-brand-accent/40 bg-brand-accent/10 hover:bg-brand-accent hover:text-white transition-all duration-300 text-xs uppercase tracking-widest text-brand-accent shadow-[0_0_15px_rgba(14,165,164,0.15)] hover:shadow-[0_0_25px_rgba(14,165,164,0.3)] font-semibold"
-            >
-              Inquire Now
             </a>
           </div>
 
