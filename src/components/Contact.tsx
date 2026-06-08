@@ -30,9 +30,9 @@ export default function Contact() {
       <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="flex justify-center">
           {/* Left Column: Form */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="w-full max-w-3xl flex flex-col justify-center">
             <span className="text-xs uppercase tracking-widest text-brand-gold font-semibold mb-2 block">
               Direct Inquiry
             </span>
@@ -127,91 +127,6 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Right Column: Contact Cards & Dark Map */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            {/* Details */}
-            <div className="glass p-8 rounded-3xl flex flex-col gap-6">
-              <h3 className="text-xl font-serif text-white font-medium mb-2 border-b border-white/5 pb-4">
-                Office Information
-              </h3>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shrink-0">
-                  <Phone className="w-4 h-4 text-brand-gold" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400 block font-medium font-sans">
-                    Call Direct
-                  </span>
-                  <a
-                    href="tel:+18883161789"
-                    className="text-white hover:text-brand-accent font-semibold transition-colors duration-300 tracking-wide text-sm font-sans"
-                  >
-                    (888) 316-1789
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shrink-0">
-                  <MapPin className="w-4 h-4 text-brand-gold" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400 block font-medium font-sans">
-                    Office Address
-                  </span>
-                  <p className="text-white text-sm font-light leading-relaxed font-sans">
-                    7105 Meadowbrook Rd, <br />
-                    Lynchburg, VA 24502, USA
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shrink-0">
-                  <Mail className="w-4 h-4 text-brand-gold" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400 block font-medium font-sans">
-                    General Inquiries
-                  </span>
-                  <a
-                    href="mailto:info@travelmintusa.com"
-                    className="text-white hover:text-brand-accent transition-colors duration-300 text-sm font-sans"
-                  >
-                    info@travelmintusa.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Chat on WhatsApp */}
-              <a
-                href="https://wa.me/18883161789"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full mt-2 py-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 font-semibold text-xs tracking-wider uppercase hover:bg-emerald-500 hover:text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-500 flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Chat with Advisor
-              </a>
-            </div>
-
-            {/* Google Map dark styled */}
-            <div className="h-[250px] w-full rounded-3xl overflow-hidden border border-white/5 relative shadow-lg">
-              <iframe
-                title="Office Location Map"
-                src="https://maps.google.com/maps?q=7105%20Meadowbrook%20Rd,%20Lynchburg,%20VA%2024502&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="filter invert-[90%] hue-rotate-[180deg] brightness-[80%] contrast-[95%] grayscale-[40%]"
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

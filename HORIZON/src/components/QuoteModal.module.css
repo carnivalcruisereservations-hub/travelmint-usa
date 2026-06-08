@@ -1,0 +1,131 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 49, 97, 0.7); /* Deep blue overlay */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out forwards;
+  border-top: 5px solid var(--brand-red);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--gray-text);
+  transition: color 0.3s;
+}
+
+.closeBtn:hover {
+  color: var(--brand-red);
+}
+
+.modalTitle {
+  color: var(--brand-blue);
+  font-family: var(--font-playfair), serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 1rem;
+  border: 1px solid #D1D9E0;
+  border-radius: 4px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  color: var(--brand-blue);
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 2px rgba(10, 49, 97, 0.1);
+}
+
+.submitBtn {
+  background-color: var(--brand-red);
+  color: var(--white);
+  padding: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(179, 25, 66, 0.3);
+}
+
+.submitBtn:hover {
+  background-color: var(--brand-blue);
+  box-shadow: 0 6px 20px rgba(10, 49, 97, 0.4);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 2rem 1.5rem;
+  }
+  .modalTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
