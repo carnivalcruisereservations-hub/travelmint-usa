@@ -6,22 +6,16 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Sir Alistair Thorne",
-    role: "CEO, Thorne Ventures",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80",
     rating: 5,
     text: "The level of personalization TravelMintUSA offers is unmatched. From the private helicopter transfers in Switzerland to securing a private dining slot at a Michelin-star villa, every detail was pristine.",
   },
   {
     name: "Victoria Rose-Sterling",
-    role: "Luxury Lifestyle Director",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80",
     rating: 5,
     text: "Our Maldivian escape was completely flawless. We didn't lift a finger. The 24/7 support was incredibly responsive, updating our flights in real-time when we decided to extend our stay.",
   },
   {
     name: "Marcus Aurelius Vance",
-    role: "Managing Partner, Vance Group",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80",
     rating: 5,
     text: "We chartered 'The Sovereign' superyacht for my wife's birthday. The Amalfi itinerary, the gourmet chef onboard, and the hidden cove anchoring made it the most memorable family trip we've ever taken.",
   },
@@ -79,20 +73,11 @@ export default function Testimonials() {
               </div>
 
               {/* Client Info */}
-              <div className="flex items-center gap-4 border-t border-white/5 pt-6">
-                <img
-                  src={test.avatar}
-                  alt={test.name}
-                  className="w-12 h-12 rounded-full object-cover border border-brand-gold/30"
-                  loading="lazy"
-                />
+              <div className="flex items-center border-t border-white/5 pt-6">
                 <div>
                   <h4 className="text-sm font-semibold text-white font-serif tracking-wider">
                     {test.name}
                   </h4>
-                  <p className="text-[10px] uppercase tracking-widest text-brand-accent mt-0.5">
-                    {test.role}
-                  </p>
                 </div>
               </div>
             </motion.div>
