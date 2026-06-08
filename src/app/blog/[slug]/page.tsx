@@ -57,8 +57,9 @@ export function generateStaticParams() {
   ];
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const article = articles[params.slug as keyof typeof articles];
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = articles[slug as keyof typeof articles];
 
   if (!article) {
     return (
