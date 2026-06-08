@@ -176,10 +176,10 @@ export default function Contact() {
                     General Inquiries
                   </span>
                   <a
-                    href="mailto:concierge@travelmintusa.com"
+                    href="mailto:info@travelmintusa.com"
                     className="text-white hover:text-brand-accent transition-colors duration-300 text-sm font-sans"
                   >
-                    concierge@TravelMintUSA.com
+                    info@travelmintusa.com
                   </a>
                 </div>
               </div>

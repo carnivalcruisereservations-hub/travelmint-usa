@@ -103,7 +103,7 @@ export default function Footer() {
                   (888) 316-1789
                 </a>
               </div>
-              <p>concierge@TravelMintUSA.com</p>
+              <p>info@travelmintusa.com</p>
             </div>
           </div>
         </div>
