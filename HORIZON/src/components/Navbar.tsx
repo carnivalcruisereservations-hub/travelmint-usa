@@ -4,9 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import QuoteModal from './QuoteModal';
+import BusinessCardModal from './BusinessCardModal';
 
 export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCardOpen, setIsCardOpen] = useState(false);
 
   return (
     <>
@@ -27,7 +29,7 @@ export default function Navbar() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/cruises">US Cruises</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><button onClick={() => setIsCardOpen(true)} className={styles.navLinkBtn}>Contact</button></li>
           </ul>
           <div className={styles.actions}>
             <div className={styles.contactInfo}>
@@ -39,6 +41,7 @@ export default function Navbar() {
         </div>
       </nav>
       <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <BusinessCardModal isOpen={isCardOpen} onClose={() => setIsCardOpen(false)} />
     </>
   );
 }

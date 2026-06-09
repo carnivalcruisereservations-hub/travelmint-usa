@@ -1,0 +1,296 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 550px;
+  background-image: url('/us_cruise_hero.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px 5% 5rem; /* Offset for navbar & generous bottom padding */
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 49, 97, 0.5) 0%, rgba(10, 49, 97, 0.75) 60%, rgba(10, 49, 97, 0.9) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  padding: 0 5%;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heroContent h1 {
+  font-family: var(--font-playfair), serif;
+  font-size: 4rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.heroTagline {
+  font-size: 1.3rem;
+  color: #EBF1F5;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
+}
+
+/* Glassmorphism Intro Box */
+.introBox {
+  background: rgba(10, 49, 97, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  max-width: 850px;
+  margin: 2rem auto 0;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.introBox h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  color: #E2C799; /* Luxury Champagne Gold */
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.introBox p {
+  font-size: 1.15rem;
+  color: #EBF1F5;
+  line-height: 1.85;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin: 0;
+}
+
+/* Cruises Grid Section */
+.gridSection {
+  padding: 3rem 5% 6rem;
+  background-color: var(--off-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cruise Card */
+.card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(10, 49, 97, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(10, 49, 97, 0.12);
+}
+
+.image {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.badgeRow {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: rgba(10, 49, 97, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.badgeRed {
+  background-color: rgba(179, 25, 66, 0.85) !important;
+}
+
+.cardBody {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.cardHeader h3 {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  color: var(--brand-blue);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.lineName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--brand-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itineraryDetails {
+  font-size: 0.95rem;
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+.portsTitle {
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.portsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.portsList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--gray-text);
+}
+
+.bullet {
+  color: var(--brand-red);
+  font-weight: bold;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #EBF1F5;
+  padding-top: 1.5rem;
+  margin-top: auto;
+}
+
+.priceCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceLabel {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--brand-red);
+}
+
+.priceSpan {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-text);
+}
+
+.inquireBtn {
+  background-color: var(--brand-blue);
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(10, 49, 97, 0.15);
+}
+
+.inquireBtn:hover {
+  background-color: var(--brand-red);
+  box-shadow: 0 6px 15px rgba(179, 25, 66, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 450px;
+    padding: 130px 5% 3rem;
+  }
+  .heroContent h1 {
+    font-size: 2.6rem;
+  }
+  .heroTagline {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .introBox {
+    padding: 1.8rem 1.2rem;
+    margin-top: 1.5rem;
+  }
+  .introBox h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .introBox p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .gridSection {
+    padding: 1.5rem 5% 4rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Compass } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16">
           {/* Logo & Info */}
-          <div className="lg:col-span-4 flex flex-col items-start">
+          <div className="lg:col-span-3 flex flex-col items-start">
             <a href="#" className="flex flex-col mb-6">
               <span className="text-xl font-serif tracking-[0.2em] font-bold text-white">
                 TRAVELMINT<span className="text-brand-gold">USA</span>
@@ -57,7 +58,7 @@ export default function Footer() {
           </div>
 
           {/* Links Quick */}
-          <div className="lg:col-span-2 lg:col-start-6">
+          <div className="lg:col-span-2 lg:col-start-5">
             <h4 className="text-xs uppercase tracking-widest text-brand-gold font-semibold mb-6">
               Destinations
             </h4>
@@ -79,6 +80,19 @@ export default function Footer() {
               <a href="#cruises" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Luxury Cruises</a>
               <a href="#testimonials" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Testimonials</a>
               <a href="#blog" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Designer Blog</a>
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div className="lg:col-span-2">
+            <h4 className="text-xs uppercase tracking-widest text-brand-gold font-semibold mb-6">
+              Legal
+            </h4>
+            <div className="flex flex-col gap-3">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Privacy Policy</Link>
+              <Link href="/refund-policy" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Refund Policy</Link>
+              <Link href="/disclaimer" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Disclaimer</Link>
+              <Link href="/terms-and-conditions" className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm font-light">Terms & Conditions</Link>
             </div>
           </div>
 
@@ -110,10 +124,16 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-gray-500 text-xs font-light text-center md:text-left">
-            © {currentYear} TRAVELMINTUSA. All rights reserved. •
-            <a href="#" className="hover:text-white ml-1">Privacy Policy</a> •
-            <a href="#" className="hover:text-white ml-1">Terms of Service</a>
+          <p className="text-gray-500 text-xs font-light text-center md:text-left flex flex-wrap items-center gap-1">
+            <span>© {currentYear} TRAVELMINTUSA. All rights reserved.</span>
+            <span>•</span>
+            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <span>•</span>
+            <Link href="/refund-policy" className="hover:text-white">Refund Policy</Link>
+            <span>•</span>
+            <Link href="/disclaimer" className="hover:text-white">Disclaimer</Link>
+            <span>•</span>
+            <Link href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link>
           </p>
           <div className="flex items-center gap-2">
             <Compass className="w-4 h-4 text-brand-gold animate-spin-slow" />

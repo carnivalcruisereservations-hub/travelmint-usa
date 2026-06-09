@@ -54,9 +54,51 @@
 }
 
 .bottom {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 2rem;
   border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 0.85rem;
   color: #EBF1F5;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: #EBF1F5;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s;
+  text-align: left;
+}
+
+.linkBtn:hover {
+  color: var(--brand-red);
+}
+
+.linkDivider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bottomLinks {
+    justify-content: center;
+    gap: 0.5rem 0.8rem;
+  }
 }

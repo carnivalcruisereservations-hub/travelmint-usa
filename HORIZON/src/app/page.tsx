@@ -65,9 +65,9 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.destCard}>
-            <div className={styles.destImagePlaceholder} style={{ backgroundImage: "url('/dubai_dest.png')" }}></div>
+            <div className={styles.destImagePlaceholder} style={{ backgroundImage: "url('/hawaii_cruise.png')" }}></div>
             <div className={styles.destContent}>
-              <h3>Dubai</h3>
+              <h3>United States (Hawaii)</h3>
             </div>
           </div>
           <div className={styles.destCard}>

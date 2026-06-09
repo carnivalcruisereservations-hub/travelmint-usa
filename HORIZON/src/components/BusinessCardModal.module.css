@@ -1,0 +1,249 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 49, 97, 0.7); /* Deep blue overlay */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cardContainer {
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.closeBtn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.closeBtn:hover {
+  color: var(--brand-red);
+}
+
+.businessCard {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(10, 49, 97, 0.2);
+  border: 1px solid #D1D9E0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topBar,
+.bottomBar {
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, #b8860b, #e6ca65, #b8860b); /* Gold metallic gradient */
+}
+
+.cardContent {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--brand-blue);
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.logoT {
+  color: var(--brand-blue);
+}
+
+.logoH {
+  color: var(--brand-red);
+}
+
+.logoUSA {
+  font-family: var(--font-playfair), serif; 
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  background-image: url('/us_flag.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  padding-left: 4px;
+}
+
+.tagline {
+  color: var(--brand-blue);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-top: 0.4rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: #EBF1F5;
+  width: 100%;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-red);
+  flex-shrink: 0;
+}
+
+.infoText {
+  color: var(--brand-blue);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.infoText:hover {
+  color: var(--brand-red);
+}
+
+.infoTextAddress {
+  color: var(--brand-blue);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.actionBtn {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border: none;
+}
+
+.btnPrimary {
+  background-color: var(--brand-red);
+  color: var(--white);
+  box-shadow: 0 4px 10px rgba(179, 25, 66, 0.3);
+}
+
+.btnPrimary:hover {
+  background-color: var(--brand-blue);
+  box-shadow: 0 6px 15px rgba(10, 49, 97, 0.4);
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  background-color: var(--white);
+  color: var(--brand-blue);
+  border: 1px solid #D1D9E0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btnSecondary:hover {
+  background-color: var(--off-white);
+  border-color: var(--brand-blue);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .cardContent {
+    padding: 2rem 1.2rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .logoUSA {
+    font-size: 1.5rem;
+  }
+  .infoText {
+    font-size: 0.95rem;
+  }
+  .infoTextAddress {
+    font-size: 0.9rem;
+  }
+  .actionButtons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .actionBtn {
+    width: 100%;
+  }
+}

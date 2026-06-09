@@ -20,20 +20,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* The Founder's Story Section */}
+      {/* Our Story Section */}
       <section className={styles.storySection}>
         <div className={styles.container}>
           <div className={styles.textContent}>
-            <h2 className={styles.sectionTitle}>The Founder's Story</h2>
+            <h2 className={styles.sectionTitle}>Our Story</h2>
             <div className={styles.blogPost}>
               <p>
-                The founder of Travelhorizonusa recognized a recurring frustration among travelers: the exhausting process of piecing together a holiday. From hunting down the perfect flights and luxury hotels to organizing rental cars and complex cruise itineraries across dozens of different websites, planning a trip often felt like a chore rather than the start of an adventure.
+                Travelhorizonusa was founded with a simple vision: to make travel planning effortless, convenient, and enjoyable. In an industry where travelers often need to navigate multiple websites to book flights, hotels, cruises, rental cars, and vacation packages, the process can quickly become overwhelming and time-consuming.
               </p>
               <p>
-                Having previously worked extensively with top-tier travel companies—initially specializing exclusively in cruises and flights—the founder saw firsthand the unnecessary trouble travelers went through just to book a seamless holiday trip. He knew there had to be a better, more unified approach.
+                Recognizing this challenge, Travelhorizonusa was created to bring every aspect of travel planning under one roof. Built on extensive industry expertise and years of experience in the travel sector, the company was designed to provide travelers with a seamless, all-in-one booking experience tailored to their unique needs.
               </p>
               <p>
-                As his third highly successful venture in the travel domain, the founder established <strong>Travelhorizonusa</strong> to solve this exact problem. His goal was simple: build a premier agency that helps travelers get absolutely everything they need under one roof, in one call.
+                As a full-service travel agency, Travelhorizonusa offers comprehensive travel solutions, including flights, luxury accommodations, cruises, transportation, and customized holiday packages. Our goal is to eliminate the stress of planning and provide customers with the convenience of managing their entire journey through a single trusted partner.
+              </p>
+              <p>
+                Today, Travelhorizonusa continues to help travelers explore the world with confidence, delivering personalized service, exceptional value, and unforgettable travel experiences from the moment they begin planning until they return home.
               </p>
             </div>
           </div>
