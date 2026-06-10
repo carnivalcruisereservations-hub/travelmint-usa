@@ -1,22 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Users, MapPin, Compass } from "lucide-react";
+import { ArrowRight, Calendar, Users, MapPin, Compass, Mail, Phone } from "lucide-react";
 import { useState } from "react";
 
 export default function Hero() {
   const [inquiry, setInquiry] = useState({
     destination: "",
     date: "",
-    guests: "2 Guests",
+    guests: "2 Guests (Couple)",
+    email: "",
+    phone: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inquiry.destination || !inquiry.date) return;
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    if (!inquiry.destination || !inquiry.date || !inquiry.email || !inquiry.phone) return;
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inquiry),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 6000);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -197,13 +218,55 @@ export default function Hero() {
                   </div>
                 </div>
 
+                {/* Email */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase tracking-wider text-gray-400 font-medium">
+                    Email Address
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-gold" />
+                    <input
+                      type="email"
+                      value={inquiry.email}
+                      onChange={(e) => setInquiry({ ...inquiry, email: e.target.value })}
+                      placeholder="your@email.com"
+                      className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-brand-sec/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold text-sm"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase tracking-wider text-gray-400 font-medium">
+                    Phone Number
+                  </label>
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-gold" />
+                    <input
+                      type="tel"
+                      value={inquiry.phone}
+                      onChange={(e) => setInquiry({ ...inquiry, phone: e.target.value })}
+                      placeholder="+1 (555) 000-0000"
+                      className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-brand-sec/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold text-sm"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Error message */}
+                {error && (
+                  <p className="text-red-400 text-xs text-center">{error}</p>
+                )}
+
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold to-brand-gold/80 hover:from-brand-accent hover:to-brand-accent/80 text-brand-bg hover:text-white font-semibold uppercase tracking-widest text-xs transition-all duration-500 shadow-lg shadow-brand-gold/15 mt-2 flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={loading}
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold to-brand-gold/80 hover:from-brand-accent hover:to-brand-accent/80 text-brand-bg hover:text-white font-semibold uppercase tracking-widest text-xs transition-all duration-500 shadow-lg shadow-brand-gold/15 mt-2 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Request Consultation
-                  <ArrowRight className="w-4 h-4" />
+                  {loading ? "Sending..." : "Request Consultation"}
+                  {!loading && <ArrowRight className="w-4 h-4" />}
                 </button>
               </form>
             )}

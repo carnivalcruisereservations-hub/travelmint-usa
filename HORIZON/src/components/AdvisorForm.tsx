@@ -8,16 +8,74 @@ export default function AdvisorForm() {
     spot: '',
     guests: '1',
     date: '',
-    days: '7'
+    days: '7',
+    email: '',
+    contact: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Advisor Request: ${formData.spot}`);
-    const body = encodeURIComponent(
-      `Vacation Spot: ${formData.spot}\nNumber of Guests: ${formData.guests}\nDate of Travel: ${formData.date}\nNumber of Days: ${formData.days}\n\nPlease contact me with options.`
-    );
-    window.location.href = `mailto:concierge@Travelhorizonusa.com?subject=${subject}&body=${body}`;
+    setIsSubmitting(true);
+
+    try {
+      // Send email via PHP endpoint
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.status === 'success') {
+          setShowModal(true);
+          setFormData({
+            spot: '',
+            guests: '1',
+            date: '',
+            days: '7',
+            email: '',
+            contact: ''
+          });
+          setIsSubmitting(false);
+          return;
+        }
+      }
+      throw new Error('Server email sending failed or returned error');
+    } catch (error) {
+      console.warn('Backend email failed, using client-side mailto fallback:', error);
+      
+      // Fallback: Open client mail client
+      const subject = encodeURIComponent(`Advisor Request: ${formData.spot}`);
+      const body = encodeURIComponent(
+        `Vacation Spot: ${formData.spot}\n` +
+        `Number of Guests: ${formData.guests}\n` +
+        `Date of Travel: ${formData.date}\n` +
+        `Number of Days: ${formData.days}\n` +
+        `Email Address: ${formData.email}\n` +
+        `Contact Number: ${formData.contact}\n\n` +
+        `Please contact me with options.`
+      );
+      
+      window.location.href = `mailto:concierge@Travelhorizonusa.com?subject=${subject}&body=${body}`;
+      
+      // Still show the modal to notify the user
+      setShowModal(true);
+      setFormData({
+        spot: '',
+        guests: '1',
+        date: '',
+        days: '7',
+        email: '',
+        contact: ''
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -27,7 +85,7 @@ export default function AdvisorForm() {
         <p>Let our experts craft the perfect itinerary for you</p>
       </div>
       <form className={styles.searchForm} onSubmit={handleSubmit}>
-        <div className={styles.inputGroup}>
+        <div className={`${styles.inputGroup} ${styles.col3}`}>
           <label>Vacation Spot</label>
           <select 
             required 
@@ -43,7 +101,7 @@ export default function AdvisorForm() {
           </select>
         </div>
         
-        <div className={styles.inputGroup}>
+        <div className={`${styles.inputGroup} ${styles.col3}`}>
           <label>Number of Guests</label>
           <input 
             type="number" 
@@ -54,7 +112,7 @@ export default function AdvisorForm() {
           />
         </div>
 
-        <div className={styles.inputGroup}>
+        <div className={`${styles.inputGroup} ${styles.col3}`}>
           <label>Date of Travel</label>
           <input 
             type="date" 
@@ -64,7 +122,7 @@ export default function AdvisorForm() {
           />
         </div>
 
-        <div className={styles.inputGroup}>
+        <div className={`${styles.inputGroup} ${styles.col3}`}>
           <label>How Many Days</label>
           <input 
             type="number" 
@@ -75,8 +133,51 @@ export default function AdvisorForm() {
           />
         </div>
 
-        <button type="submit" className={styles.submitBtn}>Push Query</button>
+        <div className={`${styles.inputGroup} ${styles.col5}`}>
+          <label>Email Address</label>
+          <input 
+            type="email" 
+            required 
+            placeholder="Enter your email address"
+            value={formData.email}
+            onChange={e => setFormData({...formData, email: e.target.value})}
+          />
+        </div>
+
+        <div className={`${styles.inputGroup} ${styles.col4}`}>
+          <label>Contact Number</label>
+          <input 
+            type="tel" 
+            required 
+            placeholder="Enter phone number"
+            value={formData.contact}
+            onChange={e => setFormData({...formData, contact: e.target.value})}
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          className={styles.submitBtn}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Pushing...' : 'Push Query'}
+        </button>
       </form>
+
+      {showModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              <div className={styles.successIcon}>✓</div>
+            </div>
+            <h3>Request Pushed!</h3>
+            <p>Your request has been pushed, our expert will get in touch soon.</p>
+            <button className={styles.closeBtn} onClick={() => setShowModal(false)}>
+              Okay
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
