@@ -46,22 +46,32 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">4. Booking and Payment</h2>
-            <h3 className="text-lg text-brand-accent mb-3">4.1 Booking Process</h3>
-            <p className="mb-4">All bookings are subject to availability and confirmation by the respective travel supplier. A booking is not confirmed until you receive a written confirmation from TravelMintUSA, and full payment (or the required deposit) has been received.</p>
+            <p className="mb-6 text-gray-400 italic">By confirming your booking with Travel Mint USA, you agree to these terms and conditions.</p>
 
-            <h3 className="text-lg text-brand-accent mb-3">4.2 Pricing</h3>
+            <h3 className="text-lg text-brand-accent mb-3">4.1 Booking Authorization</h3>
+            <p className="mb-4">By submitting this booking, you authorize the payment for the Cruise, flight, hotel, or car rental services provided by Travel Mint USA. The payment will be charged to the credit/debit card provided at the time of booking.</p>
+
+            <h3 className="text-lg text-brand-accent mb-3">4.2 Payment and Billing</h3>
+            <p className="mb-4">Full payment for the booking must be made at the time of reservation unless otherwise specified. In case of partial payment, the remaining balance must be paid before the service date. Travel Mint USA will process the payment as per the details provided.</p>
+
+            <h3 className="text-lg text-brand-accent mb-3">4.3 Pricing and Availability</h3>
             <p className="mb-4">All prices quoted are in U.S. Dollars (USD) unless otherwise stated. Prices are subject to change without notice until a booking is confirmed. Additional taxes, fees, surcharges, and gratuities may apply and will be communicated at the time of booking.</p>
 
-            <h3 className="text-lg text-brand-accent mb-3">4.3 Payment Methods</h3>
-            <p className="mb-4">We accept major credit cards (Visa, MasterCard, American Express), wire transfers, and other payment methods as specified. Full payment is typically required at the time of booking unless a deposit arrangement has been agreed upon.</p>
-
             <h3 className="text-lg text-brand-accent mb-3">4.4 Deposits</h3>
-            <p>Certain bookings may require a non-refundable deposit to secure reservations. The deposit amount and terms will be communicated prior to booking confirmation. The remaining balance is due as specified in the booking confirmation.</p>
+            <p className="mb-4">Certain bookings may require a non-refundable deposit to secure reservations. The deposit amount and terms will be communicated prior to booking confirmation. The remaining balance is due as specified in the booking confirmation.</p>
+
+            <h3 className="text-lg text-brand-accent mb-3">4.5 Cardholder’s Responsibility</h3>
+            <p>The cardholder must ensure that they have the authority to use the credit card for the transaction. Any charges that are reversed or disputed by the cardholder will result in the cancellation of the booking, and the cardholder will be responsible for any applicable fees incurred by Travel Mint USA.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">5. Cancellations and Modifications</h2>
             <p className="mb-4">Cancellation and modification policies vary depending on the travel supplier, type of booking, and fare class. Please refer to our <Link href="/refund-policy" className="text-brand-gold hover:text-white transition-colors">Refund Policy</Link> for detailed cancellation terms.</p>
+            
+            <h3 className="text-lg text-brand-accent mb-3">5.1 Changes to Booking</h3>
+            <p className="mb-4">Any changes to the booking, such as modifications to dates, guest names, or vehicle type, may incur additional fees. These changes are subject to availability and the policies of the airline, hotel, or car rental agency, as facilitated by Travel Mint USA.</p>
+
+            <h3 className="text-lg text-brand-accent mb-3">5.2 Cancellation Requirements</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-400">
               <li>All cancellation and modification requests must be submitted in writing via email to info@travelmintusa.com</li>
               <li>Cancellation fees imposed by travel suppliers will be passed on to the client</li>
@@ -122,8 +132,8 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">11. Governing Law and Dispute Resolution</h2>
-            <p className="mb-4">These Terms shall be governed by and construed in accordance with the laws of the Commonwealth of Virginia, United States, without regard to its conflict of law principles.</p>
-            <p>Any dispute arising out of or relating to these Terms or our Services shall first be attempted to be resolved through good faith negotiation. If the dispute cannot be resolved through negotiation, it shall be submitted to binding arbitration in Lynchburg, Virginia, in accordance with the rules of the American Arbitration Association.</p>
+            <p className="mb-4">This agreement is governed by the laws of the country-specific jurisdiction. Any disputes will be handled according to the jurisdiction of Travel Mint USA location in the country specific.</p>
+            <p>Any dispute arising out of or relating to these Terms or our Services shall first be attempted to be resolved through good faith negotiation. If the dispute cannot be resolved through negotiation, it shall be submitted to binding arbitration in Lynchburg, Virginia, in accordance with the rules of the American Arbitration Association, or the relevant country-specific jurisdiction.</p>
           </section>
 
           <section>

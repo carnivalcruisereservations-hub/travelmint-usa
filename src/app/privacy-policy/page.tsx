@@ -83,7 +83,13 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">6. Data Security</h2>
             <p className="mb-4">We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include encryption of data in transit (SSL/TLS), secure server infrastructure, access controls, and regular security assessments.</p>
-            <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security.</p>
+            <p className="mb-4">However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security.</p>
+            <div className="glass p-5 border border-brand-accent/20 rounded-2xl mt-4">
+              <h4 className="text-sm font-semibold text-brand-gold uppercase tracking-wider mb-2">Booking &amp; Booking Data Policy</h4>
+              <p className="text-xs leading-relaxed text-gray-400">
+                The personal data provided during booking will be used for processing your reservation and to comply with relevant laws and regulations. Travel Mint USA takes reasonable measures to protect your data, but we are not responsible for any breach caused by external factors.
+              </p>
+            </div>
           </section>
 
           <section>

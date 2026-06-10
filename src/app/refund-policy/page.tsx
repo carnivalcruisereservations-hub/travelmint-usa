@@ -46,39 +46,41 @@ export default function RefundPolicy() {
 
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">3. Flight Bookings</h2>
-            <p className="mb-4">Refund eligibility for flight bookings depends on the fare type and airline policy:</p>
+            <p className="mb-4">Once booked, flight tickets are non-refundable, unless a refund is permitted by the airline. Cancellations are subject to the airline's rules and fees. Refund eligibility depends on the fare type and airline policy:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-400">
-              <li><strong className="text-white">Refundable Tickets:</strong> Full refund of the ticket price (minus applicable service fees) if cancelled before the departure date. Refunds are processed within 7–14 business days.</li>
-              <li><strong className="text-white">Non-Refundable Tickets:</strong> No cash refund is available. Depending on the airline, a credit for future travel (minus change fees) may be issued.</li>
-              <li><strong className="text-white">24-Hour Cancellation:</strong> In compliance with U.S. Department of Transportation regulations, most airline tickets booked at least 7 days before departure may be cancelled within 24 hours of booking for a full refund.</li>
+              <li><strong className="text-white">Refundable Tickets:</strong> Full refund of the ticket price (minus applicable service fees) if cancelled before the departure date.</li>
+              <li><strong className="text-white">Non-Refundable Tickets:</strong> Once booked, tickets are generally non-refundable unless permitted by the airline. A credit for future travel (minus change fees) may be issued depending on the airline's policy.</li>
+              <li><strong className="text-white">24-Hour Cancellation:</strong> In compliance with U.S. DOT regulations, most flights booked at least 7 days before departure may be cancelled within 24 hours of booking for a full refund.</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">4. Hotel & Resort Reservations</h2>
-            <p className="mb-4">Hotel refund policies vary by property and rate type:</p>
+            <p className="mb-4">Hotel cancellations may incur cancellation fees. The amount refunded is subject to the hotel's cancellation policy, as provided by Travel Mint USA. Refund policies vary by property and rate type:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-400">
               <li><strong className="text-white">Free Cancellation Rates:</strong> Full refund if cancelled before the specified deadline (typically 24–72 hours before check-in).</li>
-              <li><strong className="text-white">Non-Refundable Rates:</strong> No refund is available for non-refundable reservations once confirmed.</li>
-              <li><strong className="text-white">Early Departure:</strong> Departing earlier than the reserved checkout date does not guarantee a refund for unused nights.</li>
-              <li><strong className="text-white">No-Shows:</strong> Failure to check in on the reserved date typically results in a charge for the first night or the full stay, depending on hotel policy.</li>
+              <li><strong className="text-white">Non-Refundable Rates:</strong> Hotel cancellations incur full cancellation fees; no refund is available once confirmed.</li>
+              <li><strong className="text-white">Early Departure:</strong> Departing earlier than checkout date does not guarantee a refund for unused nights.</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-serif text-white mb-4">5. Cruise Bookings</h2>
-            <p className="mb-4">Cruise line cancellation and refund policies are determined by the cruise operator. General guidelines include:</p>
+            <p className="mb-4">Once booked, fare is non-refundable, unless a refund is permitted by the cruise line. Cancellations are subject to the cruise line’s rules and policy. General guidelines include:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-400">
-              <li><strong className="text-white">90+ days before sailing:</strong> Full refund of cruise fare minus deposit (if non-refundable)</li>
-              <li><strong className="text-white">60–89 days before sailing:</strong> 50%–75% refund of cruise fare</li>
-              <li><strong className="text-white">30–59 days before sailing:</strong> 25%–50% refund of cruise fare</li>
-              <li><strong className="text-white">Less than 30 days before sailing:</strong> No refund available</li>
+              <li><strong className="text-white">90+ days before sailing:</strong> Subject to cruise line rules, possible partial/full refund minus non-refundable deposit.</li>
+              <li><strong className="text-white">Less than 60 days before sailing:</strong> Highly restrictive; typically no refund or very high cancellation fees.</li>
             </ul>
-            <p className="mt-4">Specific refund amounts vary by cruise line, cabin category, and promotional terms. We recommend purchasing travel insurance to protect your investment.</p>
+            <p className="mt-4">Specific refund eligibility is determined entirely by the cruise operator's policies and promotions. We recommend purchasing travel insurance to protect your investment.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">6. Private Tours & Experiences</h2>
+            <h2 className="text-2xl font-serif text-white mb-4">6. Car Rentals</h2>
+            <p className="mb-4">Car rental cancellations may incur charges depending on the rental agency's policy, which will be communicated by Travel Mint USA. Refund and cancellation rules vary by agency and vehicle category.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-serif text-white mb-4">7. Private Tours & Experiences</h2>
             <p className="mb-4">Custom-designed private tours, yacht charters, and bespoke experiences are subject to the following cancellation terms:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-400">
               <li><strong className="text-white">60+ days before the experience:</strong> Full refund minus a 15% administrative fee</li>
@@ -89,18 +91,23 @@ export default function RefundPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">7. Travel Insurance</h2>
+            <h2 className="text-2xl font-serif text-white mb-4">8. No-Show Policy</h2>
+            <p>If the cardholder fails to show up for the booked flight, hotel check-in, or car rental pick-up, the booking will be considered a no-show, and no refund will be issued. This policy is enforced by Travel Mint USA in accordance with the respective service provider's terms.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-serif text-white mb-4">9. Travel Insurance</h2>
             <p className="mb-4">TravelMintUSA strongly recommends that all clients purchase comprehensive travel insurance at the time of booking. Travel insurance can cover trip cancellations, medical emergencies, trip interruptions, lost baggage, and other unforeseen circumstances.</p>
             <p>Travel insurance premiums are non-refundable once the policy has been issued. Claims must be filed directly with the insurance provider.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">8. Force Majeure</h2>
+            <h2 className="text-2xl font-serif text-white mb-4">10. Force Majeure</h2>
             <p>In the event of circumstances beyond our control, including but not limited to natural disasters, pandemics, government travel restrictions, political instability, or acts of terrorism, refund policies may be adjusted at the discretion of the travel suppliers. TravelMintUSA will work diligently on your behalf to secure the best possible outcome, whether that be a full refund, travel credit, or rescheduled itinerary.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">9. How to Request a Refund</h2>
+            <h2 className="text-2xl font-serif text-white mb-4">11. How to Request a Refund</h2>
             <p className="mb-4">To initiate a refund request, please contact our concierge team:</p>
             <div className="glass p-6 rounded-2xl mt-4">
               <p className="text-white font-semibold mb-2">TravelMintUSA Refund Department</p>
@@ -111,7 +118,7 @@ export default function RefundPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">10. Refund Processing</h2>
+            <h2 className="text-2xl font-serif text-white mb-4">12. Refund Processing</h2>
             <p>Approved refunds will be processed to the original method of payment within 7–21 business days, depending on the travel supplier and your financial institution. Credit card refunds may take an additional billing cycle to appear on your statement.</p>
           </section>
         </div>

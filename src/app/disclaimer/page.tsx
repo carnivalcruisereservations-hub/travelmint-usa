@@ -60,8 +60,14 @@ export default function Disclaimer() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">6. Travel Insurance</h2>
-            <p>TravelMintUSA strongly recommends that all travelers purchase comprehensive travel insurance prior to departure. Travel insurance should cover trip cancellation, trip interruption, medical emergencies, evacuation, lost or stolen baggage, and other unforeseen events. TravelMintUSA is not liable for any uninsured losses.</p>
+            <h2 className="text-2xl font-serif text-white mb-4">6. Travel Insurance and Liability</h2>
+            <p className="mb-4">TravelMintUSA strongly recommends that all travelers purchase comprehensive travel insurance prior to departure. Travel insurance should cover trip cancellation, trip interruption, medical emergencies, evacuation, lost or stolen baggage, and other unforeseen events. TravelMintUSA is not liable for any uninsured losses. Please note the following specific insurance and liability guidelines:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-400">
+              <li><strong className="text-white">Cruise:</strong> The cruise’s insurance policy covers certain situations; however, travellers are encouraged to purchase additional travel insurance, which Travel Mint USA can assist in arranging.</li>
+              <li><strong className="text-white">Flights:</strong> The airline’s insurance policy covers certain situations; however, travellers are encouraged to purchase additional travel insurance, which Travel Mint USA can assist in arranging.</li>
+              <li><strong className="text-white">Hotels:</strong> The hotel is not liable for any damage or theft of personal items during the stay. Travel Mint USA recommends purchasing travel insurance for added protection.</li>
+              <li><strong className="text-white">Car Rentals:</strong> The renter agrees to return the vehicle in the same condition as received and is responsible for any damages or losses. Insurance options may be available and can be arranged by Travel Mint USA.</li>
+            </ul>
           </section>
 
           <section>
@@ -87,7 +93,12 @@ export default function Disclaimer() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif text-white mb-4">10. Contact Us</h2>
+            <h2 className="text-2xl font-serif text-white mb-4">10. Force Majeure</h2>
+            <p>Travel Mint USA is not responsible for any delays or cancellations caused by unforeseen circumstances, including but not limited to natural disasters, government regulations, or force majeure events.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-serif text-white mb-4">11. Contact Us</h2>
             <p className="mb-2">If you have any questions about this Disclaimer, please contact us at:</p>
             <div className="glass p-6 rounded-2xl mt-4">
               <p className="text-white font-semibold">TravelMintUSA</p>
