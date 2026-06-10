@@ -12,13 +12,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16">
           {/* Logo & Info */}
           <div className="lg:col-span-3 flex flex-col items-start">
-            <a href="#" className="flex flex-col mb-6">
-              <span className="text-xl font-serif tracking-[0.2em] font-bold text-white">
-                TRAVELMINT<span className="text-brand-gold">USA</span>
-              </span>
-              <span className="text-[8px] tracking-[0.4em] text-gray-400 uppercase">
-                Bespoke Luxury Journeys
-              </span>
+            <a href="#" className="flex items-center gap-3 mb-6 group">
+              <img
+                src="/images/logo.jpg"
+                alt="TravelMint USA Logo"
+                className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-xl border border-white/10 group-hover:border-brand-gold transition-all duration-300"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg md:text-xl font-serif tracking-[0.2em] font-bold text-white group-hover:text-brand-accent transition-colors duration-300">
+                  TRAVELMINT<span className="text-brand-gold">USA</span>
+                </span>
+                <span className="text-[8px] tracking-[0.3em] text-gray-400 uppercase">
+                  Bespoke Luxury Journeys
+                </span>
+              </div>
             </a>
             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-sm mb-6">
               Crafting highly customized luxury itineraries, private island getaways, and elite ocean voyages for our premium clients worldwide.
