@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './QuoteModal.module.css';
 
 interface QuoteModalProps {
@@ -9,23 +10,64 @@ interface QuoteModalProps {
 }
 
 export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     destination: '',
-    guests: '1'
+    guests: '1',
+    email: '',
+    contact: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Using mailto to forward the quote request directly to the email
-    const subject = encodeURIComponent(`New Quote Request: ${formData.destination}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nDestination: ${formData.destination}\nNumber of Guests: ${formData.guests}\n\nPlease provide a quote.`
-    );
-    window.location.href = `mailto:concierge@Travelhorizonusa.com?subject=${subject}&body=${body}`;
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      // Send quote request to PHP backend
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'quote',
+          data: formData
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.status === 'success') {
+          onClose();
+          router.push('/thank-you');
+          return;
+        }
+      }
+      throw new Error('Server email sending failed');
+    } catch (error) {
+      console.warn('Backend email failed, falling back to client mailto:', error);
+      
+      // Fallback: mailto
+      const subject = encodeURIComponent(`New Quote Request: ${formData.destination}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Destination: ${formData.destination}\n` +
+        `Number of Guests: ${formData.guests}\n` +
+        `Email: ${formData.email}\n` +
+        `Contact: ${formData.contact}\n\n` +
+        `Please provide a quote.`
+      );
+      window.location.href = `mailto:info@travelmintusa.com?subject=${subject}&body=${body}`;
+      
+      onClose();
+      router.push('/thank-you');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -40,6 +82,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
               type="text" 
               id="name" 
               required 
+              placeholder="Enter your name"
               value={formData.name}
               onChange={e => setFormData({...formData, name: e.target.value})}
             />
@@ -76,7 +119,37 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             />
           </div>
 
-          <button type="submit" className={styles.submitBtn}>Get a Quote</button>
+          <div className={styles.formGroup}>
+            <label htmlFor="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              required 
+              placeholder="your@email.com"
+              value={formData.email}
+              onChange={e => setFormData({...formData, email: e.target.value})}
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="contact">Contact Number</label>
+            <input 
+              type="tel" 
+              id="contact" 
+              required 
+              placeholder="Phone number"
+              value={formData.contact}
+              onChange={e => setFormData({...formData, contact: e.target.value})}
+            />
+          </div>
+
+          <button 
+            type="submit" 
+            className={styles.submitBtn}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Pushing...' : 'Get a Quote'}
+          </button>
         </form>
       </div>
     </div>

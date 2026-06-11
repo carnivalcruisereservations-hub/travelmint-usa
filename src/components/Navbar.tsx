@@ -40,20 +40,14 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between gap-8 lg:gap-12">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <img
-              src="/images/logo.jpg"
-              alt="TravelMint USA Logo"
-              className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-xl border border-white/10 group-hover:border-brand-gold transition-all duration-300"
-            />
-            <div className="flex flex-col">
-              <span className="text-lg md:text-xl font-serif tracking-[0.2em] font-bold text-white group-hover:text-brand-accent transition-colors duration-300">
-                TRAVELMINT<span className="text-brand-gold">USA</span>
-              </span>
-              <span className="text-[8px] tracking-[0.3em] text-gray-400 uppercase">
-                Bespoke Luxury Journeys
-              </span>
-            </div>
+          {/* Logo */}
+          <a href="#" className="flex flex-col">
+            <span className="text-xl md:text-2xl font-serif tracking-[0.2em] font-bold text-white hover:text-brand-accent transition-colors duration-300">
+              TRAVELMINT<span className="text-brand-gold">USA</span>
+            </span>
+            <span className="text-[9px] tracking-[0.4em] text-gray-400 uppercase">
+              Bespoke Luxury Journeys
+            </span>
           </a>
 
           {/* Desktop Nav Links */}

@@ -11,17 +11,30 @@ export default function Contact() {
     phone: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
-    setTimeout(() => {
-      setStatus("success");
-      setForm({ name: "", email: "", phone: "", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setStatus("idle"), 6000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch {
+      setStatus("error");
       setTimeout(() => setStatus("idle"), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -112,11 +125,14 @@ export default function Contact() {
                 className={`w-fit px-8 py-4 rounded-full font-semibold uppercase tracking-widest text-xs transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   status === "success"
                     ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/25"
+                    : status === "error"
+                    ? "bg-rose-500 text-white shadow-lg shadow-rose-500/25"
                     : "bg-brand-gold hover:bg-brand-accent text-brand-bg hover:text-white hover:shadow-[0_0_25px_rgba(14,165,164,0.3)] shadow-lg shadow-brand-gold/15"
                 }`}
               >
                 {status === "sending" && "Submitting..."}
                 {status === "success" && "Message Sent"}
+                {status === "error" && "Error Sending. Retry?"}
                 {status === "idle" && (
                   <>
                     Send Message

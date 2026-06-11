@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './AdvisorForm.module.css';
 
 export default function AdvisorForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     spot: '',
     guests: '1',
@@ -13,7 +15,6 @@ export default function AdvisorForm() {
     contact: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,16 +33,7 @@ export default function AdvisorForm() {
       if (response.ok) {
         const result = await response.json();
         if (result.status === 'success') {
-          setShowModal(true);
-          setFormData({
-            spot: '',
-            guests: '1',
-            date: '',
-            days: '7',
-            email: '',
-            contact: ''
-          });
-          setIsSubmitting(false);
+          router.push('/thank-you');
           return;
         }
       }
@@ -61,18 +53,10 @@ export default function AdvisorForm() {
         `Please contact me with options.`
       );
       
-      window.location.href = `mailto:concierge@Travelhorizonusa.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@travelmintusa.com?subject=${subject}&body=${body}`;
       
-      // Still show the modal to notify the user
-      setShowModal(true);
-      setFormData({
-        spot: '',
-        guests: '1',
-        date: '',
-        days: '7',
-        email: '',
-        contact: ''
-      });
+      // Redirect to Thank You page
+      router.push('/thank-you');
     } finally {
       setIsSubmitting(false);
     }
@@ -163,21 +147,6 @@ export default function AdvisorForm() {
           {isSubmitting ? 'Pushing...' : 'Push Query'}
         </button>
       </form>
-
-      {showModal && (
-        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
-          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-            <div className={styles.modalHeader}>
-              <div className={styles.successIcon}>✓</div>
-            </div>
-            <h3>Request Pushed!</h3>
-            <p>Your request has been pushed, our expert will get in touch soon.</p>
-            <button className={styles.closeBtn} onClick={() => setShowModal(false)}>
-              Okay
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
