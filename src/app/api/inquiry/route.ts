@@ -45,9 +45,9 @@ This inquiry was submitted via the TravelMintUSA website contact form.
       },
       body: JSON.stringify({
         from: "TravelMintUSA Inquiry <onboarding@resend.dev>",
-        to: ["info@travelmintusa.com"],
+        to: ["akaatwork1209@gmail.com"],
         reply_to: email,
-        subject: emailSubject,
+        subject: `[TravelMintUSA → info@travelmintusa.com] ${emailSubject}`,
         text: emailBody,
         html: `
           <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #0a1628; color: #e5e7eb; padding: 40px; border-radius: 12px;">
