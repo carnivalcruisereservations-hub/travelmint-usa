@@ -61,7 +61,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
         `Contact: ${formData.contact}\n\n` +
         `Please provide a quote.`
       );
-      window.location.href = `mailto:info@travelmintusa.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:concierge@travelhorizonusa.com?subject=${subject}&body=${body}`;
       
       onClose();
       router.push('/thank-you');

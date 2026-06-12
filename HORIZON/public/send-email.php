@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $payload = [
         "from" => "info@travelmintusa.com",
-        "to" => ["info@travelmintusa.com"],
+        "to" => ["concierge@travelhorizonusa.com"],
         "subject" => $subject,
         "html" => $messageHtml
     ];
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo json_encode(["status" => "success", "message" => "Email sent successfully via Resend"]);
     } else {
         // Fallback: standard php mail() if Resend API returns an error or is unconfigured
-        $to = "info@travelmintusa.com";
+        $to = "concierge@travelhorizonusa.com";
         $headers = "From: info@travelmintusa.com\r\n";
         if ($replyTo) {
             $headers .= "Reply-To: " . $replyTo . "\r\n";

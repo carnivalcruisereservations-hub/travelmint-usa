@@ -53,7 +53,7 @@ export default function AdvisorForm() {
         `Please contact me with options.`
       );
       
-      window.location.href = `mailto:info@travelmintusa.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:concierge@travelhorizonusa.com?subject=${subject}&body=${body}`;
       
       // Redirect to Thank You page
       router.push('/thank-you');
